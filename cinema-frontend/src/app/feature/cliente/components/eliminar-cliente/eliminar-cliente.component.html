@@ -1,1 +1,21 @@
-<p>eliminar-cliente works!</p>
+<div class="container" >
+
+    <div class="card-body">
+        <h1 class="display-6">Eliminar cliente</h1>
+        <p><small>Digite la cédula del cliente a eliminar</small></p>
+        <hr>
+        <form>
+            <div class="form-group row">
+                <label for="cedula" class="col-label col-sm-1">Cédula</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" name="cedula" [(ngModel)]="cliente.cedula" >
+                </div>
+                <button class="btn btn-danger" role="button"  (click)='delete(cliente.cedula)' >Eliminar</button>
+            </div>
+
+            
+
+
+        </form>
+    </div>
+</div>

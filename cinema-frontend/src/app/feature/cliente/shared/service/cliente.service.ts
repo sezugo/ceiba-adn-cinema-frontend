@@ -19,6 +19,13 @@ export class ClienteService {
       return this.http.get<Cliente[]>(this.consultarUsuarioUrl);
   }
 
+  public crearCliente(cliente:Cliente): Observable<Cliente>{
+    return this.http.post<Cliente>(this.consultarUsuarioUrl, cliente);
+  }
+
+  public eliminarCliente(cedula:String): Observable<Cliente>{
+    return this.http.delete<Cliente>(this.consultarUsuarioUrl+'/'+cedula);
+  }
 
   /*
   

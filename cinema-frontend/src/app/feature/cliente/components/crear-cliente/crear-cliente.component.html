@@ -1,1 +1,55 @@
-<p>crear-cliente works!</p>
+<div class="container" >
+
+    <div class="card-body">
+        <h1 class="display-6">Nuevo cliente</h1>
+        <p><small>A continuación ingrese todos los datos</small></p>
+        <hr>
+        <form>
+            <div class="form-group row">
+                <label for="nombre" class="col-label col-sm-2">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre"  >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="apellido" class="col-label col-sm-2">Apellido</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="apellido" [(ngModel)]="cliente.apellido"  >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="cedula" class="col-label col-sm-2">Cédula</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="cedula" [(ngModel)]="cliente.cedula"  >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="celular" class="col-label col-sm-2">Celular</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="celular" [(ngModel)]="cliente.celular"  >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="dirrecion" class="col-label col-sm-2">Dirección</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="dirrecion" [(ngModel)]="cliente.dirrecion"  >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="correo" class="col-label col-sm-2">Correo</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="correo" [(ngModel)]="cliente.correo"  >
+                </div>
+            </div>
+
+            <button class="btn btn-success" role="button" (click)='create()' >Crear</button>
+
+
+        </form>
+    </div>
+</div>
