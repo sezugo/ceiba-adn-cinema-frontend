@@ -1,0 +1,34 @@
+<!--
+<div id="productos">
+    <ul class="productos">
+      <li *ngFor="let item of listaCliente | async">
+        <span>{{item.id}}</span> {{item.categoria}}
+      </li>
+    </ul>
+  </div>
+ --> 
+
+ <div class="container">
+    <table class="table" >
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes" >
+            <th scope="row">{{ cliente.idCliente }}</th>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.cedula }}</td>
+            <td>{{ cliente.celular }}</td>
+            <td>{{ cliente.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+ </div>

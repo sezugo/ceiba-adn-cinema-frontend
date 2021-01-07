@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1 class="display-4">Clientes</h1>
+    <hr class="my-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a id="linkCliente" routerLink="./" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Cliente</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkCrearCliente" routerLink="./crear" routerLinkActive="active" class="nav-link">Crear cliente</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkEliminarCliente" routerLink="./eliminar" routerLinkActive="active" class="nav-link">Borrar cliente</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkListarCliente" routerLink="./listar" routerLinkActive="active" class="nav-link">listar cliente</a>
+        </li>
+      </ul>
+      
+  </div>
+
+  <router-outlet></router-outlet>
+  
