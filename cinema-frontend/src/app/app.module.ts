@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
 import { ProductoModule } from '@producto/producto.module';
 import { ClienteModule } from './feature/cliente/cliente.module';
+import { PeliculaModule } from './feature/pelicula/pelicula.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -23,6 +24,7 @@ import { CookieService } from 'ngx-cookie-service';
     AppRoutingModule,
     ProductoModule,
     ClienteModule,
+    PeliculaModule,
     CoreModule,
     FormsModule,
   ],

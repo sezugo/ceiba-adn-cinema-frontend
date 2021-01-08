@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="display-6">Lista actual de clientes</h1>
+    <hr>
+      <table class="table" >
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Publicada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pelicula of peliculas" >
+              <th scope="row">{{ pelicula.idPelicula }}</th>
+              <td>{{ pelicula.nombre }}</td>
+              <td>{{ pelicula.categoria }}</td>
+              <td>{{ pelicula.publicada }}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+   </div>
