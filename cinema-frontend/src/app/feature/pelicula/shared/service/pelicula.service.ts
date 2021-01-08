@@ -19,6 +19,14 @@ export class PeliculaService{
       return this.http.get<Pelicula[]>(this.consultarUsuarioUrl);
   }
 
+  public crearPelicula(pelicula:Pelicula): Observable<Pelicula>{
+    return this.http.post<Pelicula>(this.consultarUsuarioUrl, pelicula);
+  }
+
+  public eliminarPelicula(idPelicula:number): Observable<Pelicula>{
+    return this.http.delete<Pelicula>(this.consultarUsuarioUrl+'/'+idPelicula);
+  }
+
 
 
 

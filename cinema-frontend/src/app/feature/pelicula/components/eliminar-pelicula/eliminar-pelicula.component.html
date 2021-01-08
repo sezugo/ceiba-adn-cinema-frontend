@@ -1,1 +1,17 @@
-<p>eliminar-pelicula works!</p>
+<div class="container" >
+
+    <div class="card-body">
+        <h1 class="display-6">Eliminar película</h1>
+        <p><small>Digite el id de la película a eliminar</small></p>
+        <hr>
+        <form>
+            <div class="form-group row">
+                <label for="cedula" class="col-label col-sm-1">Id</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" name="cedula" [(ngModel)]="pelicula.idPelicula" >
+                </div>
+                <button class="btn btn-danger" role="button"  (click)='delete(pelicula.idPelicula)' >Eliminar</button>
+            </div>
+        </form>
+    </div>
+</div>
