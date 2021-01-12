@@ -27,8 +27,4 @@ export class PeliculaService{
     return this.http.delete<Pelicula>(this.consultarUsuarioUrl+'/'+idPelicula);
   }
 
-
-
-
-
 }

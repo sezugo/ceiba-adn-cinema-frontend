@@ -11,6 +11,7 @@ import { ClienteModule } from './feature/cliente/cliente.module';
 import { PeliculaModule } from './feature/pelicula/pelicula.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { ReservaModule } from './feature/reserva/reserva.module';
 
 
 
@@ -25,6 +26,7 @@ import { CookieService } from 'ngx-cookie-service';
     ProductoModule,
     ClienteModule,
     PeliculaModule,
+    ReservaModule,
     CoreModule,
     FormsModule,
   ],

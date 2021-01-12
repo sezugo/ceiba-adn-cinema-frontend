@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="display-6">Lista actual de reservas activas</h1>
+    <hr>
+      <table class="table" >
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Pelicula</th>
+              <th scope="col">fecha de Entrega</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reserva of reservas" >
+              <th scope="row">{{ reserva.idReserva }}</th>
+              <td>{{ reserva.cliente.nombre }}</td>
+              <td>{{ reserva.pelicula.nombre }}</td>
+              <td>{{ reserva.fecha }}</td>
+              <td> $ {{ reserva.valorTotal }}</td>
+              
+              
+            </tr>
+          </tbody>
+        </table>
+   </div>

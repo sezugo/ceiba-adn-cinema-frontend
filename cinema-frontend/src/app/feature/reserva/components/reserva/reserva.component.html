@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1 class="display-4">Reservas</h1>
+    <hr class="my-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a id="linkReserva" routerLink="./" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" class="nav-link" style="color: #212121;" >Reserva</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkCrearReserva" routerLink="./crear" routerLinkActive="active" class="nav-link" style="color: #212121;" >Crear reserva</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkEliminarReserva" routerLink="./eliminar" routerLinkActive="active" class="nav-link" style="color: #212121;" >Borrar reserva</a>
+        </li>
+        <li class="nav-item">
+            <a id="linkListarReserva" routerLink="./listar" routerLinkActive="active" class="nav-link" style="color: #212121;" >Listar reserva</a>
+        </li>
+      </ul>
+      
+  </div>
+
+  <router-outlet></router-outlet>
+  
