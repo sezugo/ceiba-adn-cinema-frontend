@@ -22,4 +22,11 @@
             </tr>
           </tbody>
         </table>
+        <hr>
+        <div *ngIf="peliculas.length == 0" class="alert alert-danger text-center" role="alert" >
+          No hay peliculas agregadas recientemente. Para crear una nueva pelicula ve al apartado <a href="" class="alert-link">*Crear Pelicula*</a> en la parte superior derecha
+        </div>
+        <div *ngIf="peliculas.length > 0" class="alert alert-success text-center" role="alert" >
+          Para crear una nueva pelicula ve al apartado <a href="" class="alert-link">*Crear Pelicula*</a> en la parte superior derecha
+        </div>
    </div>

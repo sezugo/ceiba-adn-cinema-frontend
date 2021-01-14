@@ -9,6 +9,8 @@ import { ClienteService } from '../../shared/service/cliente.service';
 })
 export class EliminarClienteComponent implements OnInit {
 
+  eliminarCliente:boolean = false;
+
   cliente:Cliente = new Cliente();
 
   constructor(private clienteService:ClienteService) { }
@@ -22,6 +24,7 @@ export class EliminarClienteComponent implements OnInit {
       e => this.cliente=e
     );
     this.cliente.cedula = '';
+    this.eliminarCliente = true;
   }
 
 

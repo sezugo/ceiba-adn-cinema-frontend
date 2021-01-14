@@ -10,17 +10,19 @@ import { ClienteService } from '../../shared/service/cliente.service';
 })
 export class CrearClienteComponent implements OnInit {
 
-
- cliente:Cliente = new Cliente();
-
+ 
+  cliente:Cliente = new Cliente();
+  eliminarCliente:boolean=false;
 
 
 constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
+    
   }
 
-  create():void{
+  create(){
+
     this.clienteService.crearCliente(this.cliente).subscribe(
       e => this.cliente=e
     );
@@ -30,7 +32,11 @@ constructor(private clienteService: ClienteService) { }
     this.cliente.celular = '';
     this.cliente.dirrecion = '';
     this.cliente.correo = '';
+    this.eliminarCliente = true;
+    
   }
+
+  
 
 
 

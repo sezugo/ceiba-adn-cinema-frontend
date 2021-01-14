@@ -13,9 +13,12 @@
                 <button class="btn btn-danger" role="button"  (click)='delete(cliente.cedula)' >Eliminar</button>
             </div>
 
+    
+
+            <div *ngIf="eliminarCliente === true" class="alert alert-success" role="alert" >
+                <a href="" class="alert-link ">¡Cliente eliminado con éxito!</a>
+            </div>  
             
-
-
         </form>
     </div>
 </div>

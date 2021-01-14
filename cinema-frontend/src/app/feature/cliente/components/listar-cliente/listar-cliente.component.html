@@ -33,4 +33,11 @@
           </tr>
         </tbody>
       </table>
+      <hr>
+      <div *ngIf="clientes.length == 0" class="alert alert-danger text-center" role="alert" >
+        No hay clientes agregados. Para crear un nuevo cliente ve al apartado <a href="" class="alert-link">*Crear Cliente*</a> en la parte superior derecha.
+      </div>
+      <div *ngIf="clientes.length > 0" class="alert alert-success text-center" role="alert" >
+        ¿Crear un nuevo cliente? Ve al apartado <a href="" class="alert-link">*Crear Cliente*</a> en la parte superior derecha.
+      </div>
  </div>

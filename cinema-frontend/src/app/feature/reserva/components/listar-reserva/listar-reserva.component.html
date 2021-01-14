@@ -6,7 +6,9 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Cliente</th>
+              <th scope="col">Cédula</th>
               <th scope="col">Pelicula</th>
+              <th scope="col">Categoria</th>
               <th scope="col">fecha de Entrega</th>
               <th scope="col">Valor</th>
             </tr>
@@ -15,7 +17,9 @@
             <tr *ngFor="let reserva of reservas" >
               <th scope="row">{{ reserva.idReserva }}</th>
               <td>{{ reserva.cliente.nombre }}</td>
+              <td>{{ reserva.cliente.cedula }}</td>
               <td>{{ reserva.pelicula.nombre }}</td>
+              <td>{{ reserva.pelicula.categoria }}</td>
               <td>{{ reserva.fecha }}</td>
               <td> $ {{ reserva.valorTotal }}</td>
               
@@ -23,4 +27,11 @@
             </tr>
           </tbody>
         </table>
+        <hr>
+        <div *ngIf="reservas.length == 0" class="alert alert-danger text-center" role="alert" >
+          No hay reservas agregadas recientemente. Para crear una nueva reserva ve al apartado <a href="" class="alert-link">*Crear Reserva*</a> en la parte superior derecha
+        </div>
+        <div *ngIf="reservas.length > 0" class="alert alert-success text-center" role="alert" >
+          Para crear una nueva reserva ve al apartado <a href="" class="alert-link">*Crear Reserva*</a> en la parte superior derecha
+        </div>
    </div>

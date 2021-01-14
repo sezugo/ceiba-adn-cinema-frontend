@@ -4,51 +4,66 @@
         <h1 class="display-6">Nuevo cliente</h1>
         <p><small>A continuación ingrese todos los datos</small></p>
         <hr>
-        <form>
+        <form autocomplete="off" (ngSubmit)="create()">
             <div class="form-group row">
                 <label for="nombre" class="col-label col-sm-2">Nombre</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre"  >
+                    <input [class.is-invalid]="nombre.invalid && nombre.touched" minlength="5" type="text" class="form-control" name="nombre" [(ngModel)]="cliente.nombre" #nombre="ngModel" >
+                    <small *ngIf="nombre.invalid"  class="form-text text-danger"> Ingrese 5 caracteres como minimo </small>
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="apellido" class="col-label col-sm-2">Apellido</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="apellido" [(ngModel)]="cliente.apellido"  >
+                    <input [class.is-invalid]="apellido.invalid && apellido.touched" minlength="4" type="text" class="form-control" name="apellido" [(ngModel)]="cliente.apellido" #apellido="ngModel" >
+                    <small *ngIf="apellido.invalid"  class="form-text text-danger"> Ingrese 5 caracteres como minimo </small>
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="cedula" class="col-label col-sm-2">Cédula</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="cedula" [(ngModel)]="cliente.cedula"  >
+                    <input [class.is-invalid]="cedula.invalid && cedula.touched" minlength="6" type="text" class="form-control" name="cedula" [(ngModel)]="cliente.cedula"  #cedula="ngModel">
+                    <small *ngIf="cedula.invalid"  class="form-text text-danger"> Cédula invalida (Ingrese 6 caracteres como minimo) </small>
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="celular" class="col-label col-sm-2">Celular</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="celular" [(ngModel)]="cliente.celular"  >
+                    <input [class.is-invalid]="celular.invalid && celular.touched" minlength="7" type="text" class="form-control" name="celular" [(ngModel)]="cliente.celular"  #celular="ngModel">
+                    <small *ngIf="celular.invalid"  class="form-text text-danger"> El número no es válido </small>
+                    
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="dirrecion" class="col-label col-sm-2">Dirección</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="dirrecion" [(ngModel)]="cliente.dirrecion"  >
+                    <input [class.is-invalid]="dirrecion.invalid && dirrecion.touched" minlength="4" type="text" class="form-control" name="dirrecion" [(ngModel)]="cliente.dirrecion"  #dirrecion="ngModel">
+                    <small *ngIf="dirrecion.invalid"  class="form-text text-danger"> Ingrese su ubicación </small>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="correo" class="col-label col-sm-2">Correo</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="correo" [(ngModel)]="cliente.correo"  >
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  [class.is-invalid]="correo.invalid && correo.touched" class="form-control" name="correo" [(ngModel)]="cliente.correo" #correo="ngModel" >
+                    <small *ngIf="correo.invalid"  class="form-text text-danger"> El correo es obligatorio </small>
                 </div>
             </div>
             <hr>
+            
 
-            <button class="btn btn-success" role="button" (click)='create()' >Generar Cliente</button>
+            <button class="btn btn-success " type="submit" >Generar Cliente</button>
+            <hr>
+            <div *ngIf="eliminarCliente === true" class="alert alert-success" role="alert" >
+                <a href="" class="alert-link">¡Cliente eliminado con éxito!</a>
+            </div>  
 
 
         </form>
