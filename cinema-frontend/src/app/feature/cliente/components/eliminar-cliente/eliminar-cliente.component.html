@@ -4,18 +4,22 @@
         <h1 class="display-6">Eliminar cliente</h1>
         <p><small>Digite la cédula del cliente a eliminar</small></p>
         <hr>
-        <form>
+        <form [formGroup]="eliminarClienteForm" autocomplete="off" (ngSubmit)="delete(eliminarClienteForm, cliente.cedula)">
             <div class="form-group row">
                 <label for="cedula" class="col-label col-sm-1">Cédula</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" name="cedula" [(ngModel)]="cliente.cedula" >
+                    <input required minlength="6" type="text" class="form-control" formControlName="cedula" name="cedula" [(ngModel)]="cliente.cedula" >
+                    <small *ngIf="eliminarClienteForm.get('cedula').hasError('minlength')"  class="form-text text-danger"> No valido </small>
                 </div>
-                <button class="btn btn-danger" role="button"  (click)='delete(cliente.cedula)' >Eliminar</button>
+                <div>
+                    <button class="btn btn-danger" type="submit" >Eliminar</button>
+                </div>
+                
             </div>
 
     
 
-            <div *ngIf="eliminarCliente === true" class="alert alert-success" role="alert" >
+            <div *ngIf="eliminarCliente === true" class="alert alert-success text-center" role="alert" >
                 <a href="" class="alert-link ">¡Cliente eliminado con éxito!</a>
             </div>  
             

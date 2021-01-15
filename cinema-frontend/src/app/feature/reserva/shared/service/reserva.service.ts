@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 import { Reserva } from '../model/reserva';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -11,7 +12,7 @@ import { Reserva } from '../model/reserva';
 
 export class ReservaService{
 
-  private consultarUsuarioUrl = "http://localhost:8080/reserva"  
+  private consultarUsuarioUrl =  `${environment.endpoint}/reserva`
   
   constructor(private http: HttpClient) {}
   

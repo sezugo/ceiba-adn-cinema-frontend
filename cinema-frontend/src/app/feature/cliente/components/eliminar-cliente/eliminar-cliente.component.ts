@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from '../../shared/model/cliente';
 import { ClienteService } from '../../shared/service/cliente.service';
 
@@ -10,21 +11,36 @@ import { ClienteService } from '../../shared/service/cliente.service';
 export class EliminarClienteComponent implements OnInit {
 
   eliminarCliente:boolean = false;
-
+  eliminarClienteForm:FormGroup;
   cliente:Cliente = new Cliente();
 
-  constructor(private clienteService:ClienteService) { }
+  constructor(private clienteService:ClienteService, private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.crearForm();
   }
 
-  delete(cedula:String):void{
-    console.log(this.cliente.cedula);
-    this.clienteService.eliminarCliente(cedula).subscribe(
+  crearForm(){
+    this.eliminarClienteForm = this.formBuilder.group({
+      cedula: [null, Validators.required]
+    })
+  }
+
+
+  delete(form, cedula:String):void{
+
+    if(form.valid){
+      
+      console.log(this.cliente.cedula);
+      this.clienteService.eliminarCliente(cedula).subscribe(
       e => this.cliente=e
     );
     this.cliente.cedula = '';
     this.eliminarCliente = true;
+    }
+
+
+    
   }
 
 
